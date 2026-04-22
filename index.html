@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Tiger Coin Quest — Developer Home</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0b1020">
+<meta name="description" content="Tiger Coin Quest by Konstanta TOV — official developer pages for Google Play Console.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+
+<style>
+:root{
+  --bg:#07111f;
+  --bg2:#0d1830;
+  --card:rgba(255,255,255,.08);
+  --card-strong:rgba(255,255,255,.12);
+  --text:#ebf1ff;
+  --muted:#a9b9d6;
+  --line:rgba(255,255,255,.14);
+  --gold:#ffcb52;
+  --gold2:#ff9f43;
+  --mint:#5df2d6;
+  --blue:#79a7ff;
+  --shadow:0 20px 60px rgba(0,0,0,.38);
+  --radius:24px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+  color:var(--text);
+  background:
+    radial-gradient(circle at 10% 20%, rgba(93,242,214,.12), transparent 0 24%),
+    radial-gradient(circle at 90% 15%, rgba(255,203,82,.16), transparent 0 22%),
+    radial-gradient(circle at 75% 85%, rgba(121,167,255,.14), transparent 0 26%),
+    linear-gradient(135deg, var(--bg), var(--bg2));
+  min-height:100vh;
+  overflow-x:hidden;
+}
+body::before{
+  content:"";
+  position:fixed; inset:0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+  background-size:26px 26px;
+  mask-image:radial-gradient(circle at center, black 55%, transparent 100%);
+  pointer-events:none;
+}
+a{color:inherit}
+.container{
+  width:min(1120px, calc(100% - 28px));
+  margin:0 auto;
+}
+.site-header{
+  position:sticky;
+  top:0;
+  z-index:20;
+  backdrop-filter: blur(14px);
+  background:rgba(7,17,31,.55);
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.nav{
+  display:flex; align-items:center; justify-content:space-between;
+  gap:16px; padding:14px 0;
+}
+.brand{
+  display:flex; align-items:center; gap:12px; text-decoration:none;
+}
+.brand-badge{
+  width:44px;height:44px;border-radius:14px;
+  background:
+    conic-gradient(from 180deg, var(--gold), var(--gold2), var(--mint), var(--blue), var(--gold));
+  box-shadow:0 10px 30px rgba(255,203,82,.22);
+  position:relative;
+}
+.brand-badge::after{
+  content:"₿";
+  position:absolute; inset:0; display:grid; place-items:center;
+  color:#08111d; font-weight:900; font-size:1.18rem;
+}
+.brand-text strong{
+  display:block; font-family:"Space Grotesk",Inter,sans-serif;
+  letter-spacing:.2px; font-size:1rem;
+}
+.brand-text span{display:block; color:var(--muted); font-size:.82rem}
+.nav-links{
+  display:flex; flex-wrap:wrap; gap:10px;
+}
+.nav-links a{
+  text-decoration:none; padding:10px 14px; border-radius:999px;
+  border:1px solid var(--line); background:rgba(255,255,255,.04);
+  transition:transform .22s ease, background .22s ease, border-color .22s ease;
+  font-size:.95rem;
+}
+.nav-links a:hover, .nav-links a:focus-visible{
+  transform:translateY(-2px);
+  background:rgba(255,255,255,.1);
+  border-color:rgba(255,203,82,.4);
+}
+.hero{
+  padding:56px 0 28px;
+}
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.25fr .85fr;
+  gap:22px;
+  align-items:stretch;
+}
+.panel{
+  background:linear-gradient(180deg, rgba(255,255,255,.11), rgba(255,255,255,.06));
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+}
+.hero-card{
+  padding:30px;
+  position:relative;
+  overflow:hidden;
+}
+.hero-card::after{
+  content:"";
+  position:absolute; right:-40px; top:-40px; width:180px; height:180px;
+  background:radial-gradient(circle, rgba(255,203,82,.36), transparent 65%);
+  filter:blur(5px);
+}
+.eyebrow{
+  display:inline-flex; gap:8px; align-items:center;
+  padding:8px 12px; border-radius:999px; font-size:.84rem;
+  color:#08111d; background:linear-gradient(90deg,var(--gold),#fff0bc);
+  font-weight:800; letter-spacing:.2px;
+}
+h1,h2,h3{
+  margin:16px 0 12px;
+  line-height:1.04;
+  font-family:"Space Grotesk",Inter,sans-serif;
+}
+h1{font-size:clamp(2.05rem, 6vw, 4.5rem)}
+h2{font-size:clamp(1.45rem, 4vw, 2.4rem)}
+h3{font-size:1.1rem}
+p{color:var(--muted); line-height:1.7; margin:0 0 14px}
+.lead{font-size:1.05rem; max-width:62ch}
+.cta-row{
+  display:flex; flex-wrap:wrap; gap:12px; margin-top:18px;
+}
+.btn{
+  text-decoration:none; font-weight:700; padding:13px 18px; border-radius:16px;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.06);
+  transition:transform .22s ease, box-shadow .22s ease, background .22s ease;
+}
+.btn.primary{
+  color:#07111f; background:linear-gradient(135deg,var(--gold),#ffe494);
+  border:none; box-shadow:0 12px 30px rgba(255,203,82,.2);
+}
+.btn:hover,.btn:focus-visible{transform:translateY(-2px)}
+.stats{
+  display:grid; gap:14px; padding:24px;
+}
+.stat{
+  padding:18px; border-radius:20px;
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.1);
+}
+.stat strong{
+  font-size:1.6rem; display:block; margin-bottom:6px; color:#fff;
+}
+.section{
+  padding:18px 0 54px;
+}
+.grid{
+  display:grid; grid-template-columns:repeat(12,1fr); gap:18px;
+}
+.col-4{grid-column:span 4}
+.col-5{grid-column:span 5}
+.col-6{grid-column:span 6}
+.col-7{grid-column:span 7}
+.col-8{grid-column:span 8}
+.col-12{grid-column:span 12}
+.card{
+  padding:24px;
+}
+.card:hover{
+  transform:translateY(-2px);
+  transition:transform .25s ease;
+}
+.tag{
+  display:inline-block; padding:7px 10px; margin:4px 6px 0 0;
+  border-radius:999px; background:rgba(255,255,255,.06);
+  border:1px solid var(--line); color:#d9e6ff; font-size:.84rem;
+}
+.list{
+  display:grid; gap:12px; padding:0; margin:0; list-style:none;
+}
+.list li{
+  padding:14px 16px;
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:16px;
+}
+.timeline{
+  position:relative; padding-left:18px;
+}
+.timeline::before{
+  content:""; position:absolute; left:0; top:4px; bottom:4px;
+  width:2px; background:linear-gradient(var(--gold), transparent);
+}
+.timeline-item{
+  position:relative; padding:0 0 18px 18px;
+}
+.timeline-item::before{
+  content:""; position:absolute; left:-7px; top:8px;
+  width:12px; height:12px; border-radius:50%;
+  background:var(--gold); box-shadow:0 0 0 4px rgba(255,203,82,.18);
+}
+.footer{
+  padding:18px 0 36px;
+  color:var(--muted);
+}
+.footer-inner{
+  display:flex; flex-wrap:wrap; gap:12px; justify-content:space-between; align-items:center;
+  border-top:1px solid rgba(255,255,255,.1);
+  padding-top:18px;
+}
+.code-chip{
+  display:inline-flex; align-items:center; gap:8px;
+  background:rgba(255,255,255,.06);
+  border:1px solid var(--line);
+  border-radius:12px; padding:10px 12px;
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-size:.92rem;
+  word-break:break-all;
+}
+.accent-line{
+  height:1px;
+  background:linear-gradient(90deg, transparent, rgba(255,203,82,.8), transparent);
+  margin:16px 0 20px;
+}
+.notice{
+  padding:16px 18px; border-radius:18px; border:1px solid rgba(93,242,214,.22);
+  background:linear-gradient(180deg, rgba(93,242,214,.1), rgba(93,242,214,.04));
+}
+.flip{
+  perspective:1200px;
+}
+.flip-inner{
+  position:relative;
+  min-height:250px;
+  transform-style:preserve-3d;
+  transition:transform .8s ease;
+}
+.flip:hover .flip-inner{transform:rotateY(180deg)}
+.flip-side{
+  position:absolute; inset:0; backface-visibility:hidden;
+  border-radius:22px;
+}
+.flip-back{transform:rotateY(180deg)}
+.glow{
+  box-shadow:0 0 0 1px rgba(255,255,255,.08), 0 18px 48px rgba(121,167,255,.12);
+}
+.small{font-size:.92rem}
+@media (max-width: 960px){
+  .hero-grid{grid-template-columns:1fr}
+  .col-4,.col-5,.col-6,.col-7,.col-8{grid-column:span 12}
+}
+@media (max-width: 680px){
+  .nav{align-items:flex-start; flex-direction:column}
+  .nav-links{width:100%}
+  .nav-links a{flex:1 1 calc(50% - 10px); text-align:center}
+  .hero{padding-top:30px}
+  .hero-card,.stats,.card{padding:20px}
+  .cta-row .btn{width:100%; text-align:center}
+  .brand{width:100%}
+}
+</style>
+
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="index.html" aria-label="Open homepage">
+      <div class="brand-badge"></div>
+      <div class="brand-text">
+        <strong>Tiger Coin Quest</strong>
+        <span>Official developer pages</span>
+      </div>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="support.html">Support</a>
+      <a href="marketing.html">Marketing</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container hero-grid">
+      <article class="panel hero-card">
+        <span class="eyebrow">Open • Clear • Official</span>
+        <h1>Tiger Coin Quest</h1>
+        <p class="lead">
+          Official public page for the application <strong>Tiger Coin Quest</strong> and the developer account of
+          <strong>Konstanta TOV</strong>. This website is designed to give moderators, users, and partners a transparent
+          overview of the app, support contacts, privacy approach, and future development direction.
+        </p>
+        <div class="accent-line"></div>
+        <p>
+          The project is presented openly: what the app is, who develops it, how users can reach support,
+          and how privacy is handled. The goal is to create trust through simple language, visible contact information,
+          and connected pages that are easy to verify on mobile devices.
+        </p>
+        <div class="cta-row">
+          <a class="btn primary" href="privacy-policy.html">Read Privacy Policy</a>
+          <a class="btn" href="support.html">Open Support Page</a>
+          <a class="btn" href="marketing.html">View Marketing Page</a>
+        </div>
+      </article>
+
+      <aside class="panel stats">
+        <div class="stat">
+          <strong>1 App</strong>
+          <span>Current public project: Tiger Coin Quest</span>
+        </div>
+        <div class="stat">
+          <strong>0 Data</strong>
+          <span>No personal data collection, storage, or sharing stated in the privacy policy.</span>
+        </div>
+        <div class="stat">
+          <strong>Direct Contact</strong>
+          <span><a href="mailto:sergeypoznyko@gmail.com">sergeypoznyko@gmail.com</a></span>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container grid">
+      <article class="panel card col-7">
+        <h2>Developer profile</h2>
+        <p>
+          <strong>Konstanta TOV</strong> is the developer name shown for this application. This page exists to make the account
+          identity more understandable to both users and platform reviewers.
+        </p>
+        <div class="list">
+          <li><strong>Developer name:</strong> Konstanta TOV</li>
+          <li><strong>Application name:</strong> Tiger Coin Quest</li>
+          <li><strong>Primary account email:</strong> <a href="mailto:sergeypoznyko@gmail.com">sergeypoznyko@gmail.com</a></li>
+          <li><strong>Purpose of this site:</strong> public transparency, support access, and policy visibility.</li>
+        </div>
+      </article>
+
+      <article class="panel card col-5 glow">
+        <h2>Transparency focus</h2>
+        <p>These public pages are structured to show a complete and honest picture of the developer account.</p>
+        <span class="tag">Official contact</span>
+        <span class="tag">Linked pages</span>
+        <span class="tag">Mobile friendly</span>
+        <span class="tag">Clear privacy wording</span>
+        <span class="tag">Future roadmap context</span>
+      </article>
+
+      <article class="panel card col-4">
+        <h3>Privacy</h3>
+        <p>The app does not collect, store, or transfer user data according to the published privacy statement.</p>
+        <a class="btn" href="privacy-policy.html">Open page</a>
+      </article>
+
+      <article class="panel card col-4">
+        <h3>Support</h3>
+        <p>Users can contact the developer directly for help, questions, and issue reporting.</p>
+        <a class="btn" href="support.html">Open page</a>
+      </article>
+
+      <article class="panel card col-4">
+        <h3>Marketing</h3>
+        <p>The public message explains the developer’s current stage, effort, value focus, and future monetization plans.</p>
+        <a class="btn" href="marketing.html">Open page</a>
+      </article>
+
+      <article class="panel card col-12 flip">
+        <div class="flip-inner">
+          <div class="flip-side panel card">
+            <h2>About the application</h2>
+            <p>
+              <strong>Tiger Coin Quest</strong> is presented as a developing product built with care and growing ambition.
+              The public-facing materials emphasize clarity, openness, and responsible communication with users.
+            </p>
+            <p>
+              This homepage acts as a single entry point for all important documents connected to the app listing.
+            </p>
+            <p class="small">Hover or tap mentally through the linked sections to explore the full public profile.</p>
+          </div>
+          <div class="flip-side flip-back panel card">
+            <h2>Why this website matters</h2>
+            <p>
+              Reviewers can quickly verify support access, privacy language, and developer identity. Users can understand
+              what the app does not do with their data and how to reach the developer if needed.
+            </p>
+            <p>
+              The design is intentionally distinctive to make the developer profile memorable while staying easy to read.
+            </p>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <div>© <span id="year"></span> Konstanta TOV. Built for GitHub Pages and Google Play Console.</div>
+    <div class="small">Developer contact: <a href="mailto:sergeypoznyko@gmail.com">sergeypoznyko@gmail.com</a></div>
+  </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const year = document.getElementById('year');
+  if (year) year.textContent = new Date().getFullYear();
+
+  document.querySelectorAll('[data-copy]').forEach(btn => {
+    btn.addEventListener('click', async () => {
+      const text = btn.getAttribute('data-copy');
+      try{
+        await navigator.clipboard.writeText(text);
+        const old = btn.textContent;
+        btn.textContent = 'Copied';
+        setTimeout(()=>btn.textContent = old, 1200);
+      }catch(e){
+        alert(text);
+      }
+    });
+  });
+
+  const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.animate([
+          {opacity:0, transform:'translateY(16px)'},
+          {opacity:1, transform:'translateY(0)'}
+        ], {duration:700, easing:'cubic-bezier(.2,.65,.2,1)', fill:'forwards'});
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {threshold: .12});
+
+  document.querySelectorAll('.panel, .card, .stat').forEach(el => observer.observe(el));
+});
+</script>
+
+</body>
+</html>
