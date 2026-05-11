@@ -10,7 +10,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 
-
 <style>
 :root{
   --bg:#07111f;
@@ -136,7 +135,7 @@ a{color:inherit}
 }
 h1,h2,h3{
   margin:16px 0 12px;
-  line-height:1.04;
+  line-height:1.08;
   font-family:"Space Grotesk",Inter,sans-serif;
 }
 h1{font-size:clamp(2.05rem, 6vw, 4.5rem)}
@@ -148,6 +147,7 @@ p{color:var(--muted); line-height:1.7; margin:0 0 14px}
   display:flex; flex-wrap:wrap; gap:12px; margin-top:18px;
 }
 .btn{
+  display:inline-block;
   text-decoration:none; font-weight:700; padding:13px 18px; border-radius:16px;
   border:1px solid var(--line);
   background:rgba(255,255,255,.06);
@@ -167,7 +167,11 @@ p{color:var(--muted); line-height:1.7; margin:0 0 14px}
   border:1px solid rgba(255,255,255,.1);
 }
 .stat strong{
-  font-size:1.6rem; display:block; margin-bottom:6px; color:#fff;
+  font-size:1.18rem; display:block; margin-bottom:8px; color:#fff;
+}
+.stat span{
+  color:var(--muted);
+  line-height:1.65;
 }
 .section{
   padding:18px 0 54px;
@@ -188,35 +192,15 @@ p{color:var(--muted); line-height:1.7; margin:0 0 14px}
   transform:translateY(-2px);
   transition:transform .25s ease;
 }
-.tag{
-  display:inline-block; padding:7px 10px; margin:4px 6px 0 0;
-  border-radius:999px; background:rgba(255,255,255,.06);
-  border:1px solid var(--line); color:#d9e6ff; font-size:.84rem;
+.notice{
+  padding:16px 18px;
+  border-radius:18px;
+  border:1px solid rgba(93,242,214,.22);
+  background:linear-gradient(180deg, rgba(93,242,214,.1), rgba(93,242,214,.04));
+  color:var(--muted);
+  line-height:1.7;
 }
-.list{
-  display:grid; gap:12px; padding:0; margin:0; list-style:none;
-}
-.list li{
-  padding:14px 16px;
-  background:rgba(255,255,255,.04);
-  border:1px solid rgba(255,255,255,.1);
-  border-radius:16px;
-}
-.timeline{
-  position:relative; padding-left:18px;
-}
-.timeline::before{
-  content:""; position:absolute; left:0; top:4px; bottom:4px;
-  width:2px; background:linear-gradient(var(--gold), transparent);
-}
-.timeline-item{
-  position:relative; padding:0 0 18px 18px;
-}
-.timeline-item::before{
-  content:""; position:absolute; left:-7px; top:8px;
-  width:12px; height:12px; border-radius:50%;
-  background:var(--gold); box-shadow:0 0 0 4px rgba(255,203,82,.18);
-}
+.notice strong{color:#fff}
 .footer{
   padding:18px 0 36px;
   color:var(--muted);
@@ -240,29 +224,14 @@ p{color:var(--muted); line-height:1.7; margin:0 0 14px}
   background:linear-gradient(90deg, transparent, rgba(255,203,82,.8), transparent);
   margin:16px 0 20px;
 }
-.notice{
-  padding:16px 18px; border-radius:18px; border:1px solid rgba(93,242,214,.22);
-  background:linear-gradient(180deg, rgba(93,242,214,.1), rgba(93,242,214,.04));
-}
-.flip{
-  perspective:1200px;
-}
-.flip-inner{
-  position:relative;
-  min-height:250px;
-  transform-style:preserve-3d;
-  transition:transform .8s ease;
-}
-.flip:hover .flip-inner{transform:rotateY(180deg)}
-.flip-side{
-  position:absolute; inset:0; backface-visibility:hidden;
-  border-radius:22px;
-}
-.flip-back{transform:rotateY(180deg)}
 .glow{
   box-shadow:0 0 0 1px rgba(255,255,255,.08), 0 18px 48px rgba(121,167,255,.12);
 }
 .small{font-size:.92rem}
+.reveal{
+  opacity:0;
+  transform:translateY(16px);
+}
 @media (max-width: 960px){
   .hero-grid{grid-template-columns:1fr}
   .col-4,.col-5,.col-6,.col-7,.col-8{grid-column:span 12}
@@ -301,7 +270,7 @@ p{color:var(--muted); line-height:1.7; margin:0 0 14px}
 <main>
   <section class="hero">
     <div class="container hero-grid">
-      <article class="panel hero-card">
+      <article class="panel hero-card reveal">
         <span class="eyebrow">Marketing URL</span>
         <h1>Why this app is being built</h1>
         <p class="lead">
@@ -320,7 +289,7 @@ p{color:var(--muted); line-height:1.7; margin:0 0 14px}
         </div>
       </article>
 
-      <aside class="panel stats">
+      <aside class="panel stats reveal">
         <div class="stat">
           <strong>Current monetization</strong>
           <span>No paid functions and no subscriptions at this time.</span>
@@ -330,8 +299,8 @@ p{color:var(--muted); line-height:1.7; margin:0 0 14px}
           <span>Possible premium features or subscriptions to support development.</span>
         </div>
         <div class="stat">
-          <strong>Core promise</strong>
-          <span>Work hard, improve constantly, and add real value.</span>
+          <strong>Measurement tools</strong>
+          <span>Firebase Analytics and AppsFlyer may be used for analytics, attribution, and marketing measurement.</span>
         </div>
       </aside>
     </div>
@@ -339,7 +308,7 @@ p{color:var(--muted); line-height:1.7; margin:0 0 14px}
 
   <section class="section">
     <div class="container grid">
-      <article class="panel card col-4">
+      <article class="panel card col-4 reveal">
         <h2>Current stage</h2>
         <p>
           This project is in an early growth stage. The developer is learning, refining, and investing serious effort into
@@ -347,7 +316,7 @@ p{color:var(--muted); line-height:1.7; margin:0 0 14px}
         </p>
       </article>
 
-      <article class="panel card col-4">
+      <article class="panel card col-4 reveal">
         <h2>Value focus</h2>
         <p>
           The goal is not only to publish an app, but to build something meaningful. Improvements are aimed at usability,
@@ -355,14 +324,14 @@ p{color:var(--muted); line-height:1.7; margin:0 0 14px}
         </p>
       </article>
 
-      <article class="panel card col-4">
+      <article class="panel card col-4 reveal">
         <h2>Long-term vision</h2>
         <p>
           Sustainable development may later include premium options or subscriptions, introduced carefully and transparently.
         </p>
       </article>
 
-      <article class="panel card col-8">
+      <article class="panel card col-8 reveal">
         <h2>Public statement</h2>
         <p>
           I am a beginner developer and I am putting real effort into <strong>Tiger Tap - Jogo Tigrinho</strong>. Right now, the application
@@ -372,13 +341,35 @@ p{color:var(--muted); line-height:1.7; margin:0 0 14px}
         </p>
       </article>
 
-      <article class="panel card col-4 glow">
+      <article class="panel card col-4 glow reveal">
         <h2>Get in touch</h2>
         <p>User feedback can directly influence the future of the app.</p>
         <div class="cta-row">
           <a class="btn" href="mailto:sergeypoznyko@gmail.com">Contact developer</a>
           <button class="btn" type="button" data-copy="sergeypoznyko@gmail.com">Copy email</button>
         </div>
+      </article>
+
+      <article class="panel card col-12 reveal">
+        <h2>Analytics and marketing measurement</h2>
+        <div class="notice">
+          <strong>Privacy-related note.</strong>
+          Tiger Tap - Jogo Tigrinho may use Firebase Analytics and AppsFlyer to understand app usage, measure app activity,
+          improve performance, support attribution, measure marketing campaigns, and help with fraud prevention, security,
+          and compliance.
+        </div>
+        <p>
+          These services may process limited usage data, app activity, device identifiers, advertising identifiers,
+          approximate location, app version, device type, and diagnostic information as described in the Privacy Policy.
+          Data is transmitted using secure protocols such as HTTPS/TLS.
+        </p>
+        <p>
+          Tiger Tap - Jogo Tigrinho does not currently provide a direct in-app mechanism or separate request process for users
+          to request deletion of analytics, attribution, or device identifier data.
+        </p>
+        <p>
+          For full details, please review the <a href="privacy-policy.html">Privacy Policy</a>.
+        </p>
       </article>
     </div>
   </section>
@@ -416,13 +407,17 @@ document.addEventListener('DOMContentLoaded', () => {
         entry.target.animate([
           {opacity:0, transform:'translateY(16px)'},
           {opacity:1, transform:'translateY(0)'}
-        ], {duration:700, easing:'cubic-bezier(.2,.65,.2,1)', fill:'forwards'});
+        ], {
+          duration:700,
+          easing:'cubic-bezier(.2,.65,.2,1)',
+          fill:'forwards'
+        });
         observer.unobserve(entry.target);
       }
     });
   }, {threshold: .12});
 
-  document.querySelectorAll('.panel, .card, .stat').forEach(el => observer.observe(el));
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 });
 </script>
 
