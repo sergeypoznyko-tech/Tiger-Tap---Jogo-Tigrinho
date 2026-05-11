@@ -10,7 +10,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 
-
 <style>
 :root{
   --bg:#07111f;
@@ -65,14 +64,22 @@ a{color:inherit}
   border-bottom:1px solid rgba(255,255,255,.08);
 }
 .nav{
-  display:flex; align-items:center; justify-content:space-between;
-  gap:16px; padding:14px 0;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  padding:14px 0;
 }
 .brand{
-  display:flex; align-items:center; gap:12px; text-decoration:none;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  text-decoration:none;
 }
 .brand-badge{
-  width:44px;height:44px;border-radius:14px;
+  width:44px;
+  height:44px;
+  border-radius:14px;
   background:
     conic-gradient(from 180deg, var(--gold), var(--gold2), var(--mint), var(--blue), var(--gold));
   box-shadow:0 10px 30px rgba(255,203,82,.22);
@@ -80,24 +87,41 @@ a{color:inherit}
 }
 .brand-badge::after{
   content:"₿";
-  position:absolute; inset:0; display:grid; place-items:center;
-  color:#08111d; font-weight:900; font-size:1.18rem;
+  position:absolute;
+  inset:0;
+  display:grid;
+  place-items:center;
+  color:#08111d;
+  font-weight:900;
+  font-size:1.18rem;
 }
 .brand-text strong{
-  display:block; font-family:"Space Grotesk",Inter,sans-serif;
-  letter-spacing:.2px; font-size:1rem;
+  display:block;
+  font-family:"Space Grotesk",Inter,sans-serif;
+  letter-spacing:.2px;
+  font-size:1rem;
 }
-.brand-text span{display:block; color:var(--muted); font-size:.82rem}
+.brand-text span{
+  display:block;
+  color:var(--muted);
+  font-size:.82rem;
+}
 .nav-links{
-  display:flex; flex-wrap:wrap; gap:10px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
 }
 .nav-links a{
-  text-decoration:none; padding:10px 14px; border-radius:999px;
-  border:1px solid var(--line); background:rgba(255,255,255,.04);
+  text-decoration:none;
+  padding:10px 14px;
+  border-radius:999px;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.04);
   transition:transform .22s ease, background .22s ease, border-color .22s ease;
   font-size:.95rem;
 }
-.nav-links a:hover, .nav-links a:focus-visible{
+.nav-links a:hover,
+.nav-links a:focus-visible{
   transform:translateY(-2px);
   background:rgba(255,255,255,.1);
   border-color:rgba(255,203,82,.4);
@@ -124,56 +148,96 @@ a{color:inherit}
 }
 .hero-card::after{
   content:"";
-  position:absolute; right:-40px; top:-40px; width:180px; height:180px;
+  position:absolute;
+  right:-40px;
+  top:-40px;
+  width:180px;
+  height:180px;
   background:radial-gradient(circle, rgba(255,203,82,.36), transparent 65%);
   filter:blur(5px);
 }
 .eyebrow{
-  display:inline-flex; gap:8px; align-items:center;
-  padding:8px 12px; border-radius:999px; font-size:.84rem;
-  color:#08111d; background:linear-gradient(90deg,var(--gold),#fff0bc);
-  font-weight:800; letter-spacing:.2px;
+  display:inline-flex;
+  gap:8px;
+  align-items:center;
+  padding:8px 12px;
+  border-radius:999px;
+  font-size:.84rem;
+  color:#08111d;
+  background:linear-gradient(90deg,var(--gold),#fff0bc);
+  font-weight:800;
+  letter-spacing:.2px;
 }
 h1,h2,h3{
   margin:16px 0 12px;
-  line-height:1.04;
+  line-height:1.08;
   font-family:"Space Grotesk",Inter,sans-serif;
 }
 h1{font-size:clamp(2.05rem, 6vw, 4.5rem)}
 h2{font-size:clamp(1.45rem, 4vw, 2.4rem)}
 h3{font-size:1.1rem}
-p{color:var(--muted); line-height:1.7; margin:0 0 14px}
-.lead{font-size:1.05rem; max-width:62ch}
+p{
+  color:var(--muted);
+  line-height:1.72;
+  margin:0 0 14px;
+}
+.lead{
+  font-size:1.05rem;
+  max-width:62ch;
+}
 .cta-row{
-  display:flex; flex-wrap:wrap; gap:12px; margin-top:18px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:18px;
 }
 .btn{
-  text-decoration:none; font-weight:700; padding:13px 18px; border-radius:16px;
+  display:inline-block;
+  text-decoration:none;
+  font-weight:700;
+  padding:13px 18px;
+  border-radius:16px;
   border:1px solid var(--line);
   background:rgba(255,255,255,.06);
   transition:transform .22s ease, box-shadow .22s ease, background .22s ease;
 }
 .btn.primary{
-  color:#07111f; background:linear-gradient(135deg,var(--gold),#ffe494);
-  border:none; box-shadow:0 12px 30px rgba(255,203,82,.2);
+  color:#07111f;
+  background:linear-gradient(135deg,var(--gold),#ffe494);
+  border:none;
+  box-shadow:0 12px 30px rgba(255,203,82,.2);
 }
-.btn:hover,.btn:focus-visible{transform:translateY(-2px)}
+.btn:hover,.btn:focus-visible{
+  transform:translateY(-2px);
+}
 .stats{
-  display:grid; gap:14px; padding:24px;
+  display:grid;
+  gap:14px;
+  padding:24px;
 }
 .stat{
-  padding:18px; border-radius:20px;
+  padding:18px;
+  border-radius:20px;
   background:rgba(255,255,255,.05);
   border:1px solid rgba(255,255,255,.1);
 }
 .stat strong{
-  font-size:1.6rem; display:block; margin-bottom:6px; color:#fff;
+  font-size:1.2rem;
+  display:block;
+  margin-bottom:8px;
+  color:#fff;
+}
+.stat span{
+  color:var(--muted);
+  line-height:1.65;
 }
 .section{
   padding:18px 0 54px;
 }
 .grid{
-  display:grid; grid-template-columns:repeat(12,1fr); gap:18px;
+  display:grid;
+  grid-template-columns:repeat(12,1fr);
+  gap:18px;
 }
 .col-4{grid-column:span 4}
 .col-5{grid-column:span 5}
@@ -189,97 +253,111 @@ p{color:var(--muted); line-height:1.7; margin:0 0 14px}
   transition:transform .25s ease;
 }
 .tag{
-  display:inline-block; padding:7px 10px; margin:4px 6px 0 0;
-  border-radius:999px; background:rgba(255,255,255,.06);
-  border:1px solid var(--line); color:#d9e6ff; font-size:.84rem;
+  display:inline-block;
+  padding:7px 10px;
+  margin:4px 6px 0 0;
+  border-radius:999px;
+  background:rgba(255,255,255,.06);
+  border:1px solid var(--line);
+  color:#d9e6ff;
+  font-size:.84rem;
 }
-.list{
-  display:grid; gap:12px; padding:0; margin:0; list-style:none;
+.info-list{
+  display:grid;
+  gap:12px;
+  margin-top:10px;
 }
-.list li{
+.info-item{
   padding:14px 16px;
   background:rgba(255,255,255,.04);
   border:1px solid rgba(255,255,255,.1);
   border-radius:16px;
+  color:var(--muted);
+  line-height:1.65;
 }
-.timeline{
-  position:relative; padding-left:18px;
-}
-.timeline::before{
-  content:""; position:absolute; left:0; top:4px; bottom:4px;
-  width:2px; background:linear-gradient(var(--gold), transparent);
-}
-.timeline-item{
-  position:relative; padding:0 0 18px 18px;
-}
-.timeline-item::before{
-  content:""; position:absolute; left:-7px; top:8px;
-  width:12px; height:12px; border-radius:50%;
-  background:var(--gold); box-shadow:0 0 0 4px rgba(255,203,82,.18);
+.info-item strong{
+  color:#fff;
 }
 .footer{
   padding:18px 0 36px;
   color:var(--muted);
 }
 .footer-inner{
-  display:flex; flex-wrap:wrap; gap:12px; justify-content:space-between; align-items:center;
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  justify-content:space-between;
+  align-items:center;
   border-top:1px solid rgba(255,255,255,.1);
   padding-top:18px;
-}
-.code-chip{
-  display:inline-flex; align-items:center; gap:8px;
-  background:rgba(255,255,255,.06);
-  border:1px solid var(--line);
-  border-radius:12px; padding:10px 12px;
-  font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
-  font-size:.92rem;
-  word-break:break-all;
 }
 .accent-line{
   height:1px;
   background:linear-gradient(90deg, transparent, rgba(255,203,82,.8), transparent);
   margin:16px 0 20px;
 }
-.notice{
-  padding:16px 18px; border-radius:18px; border:1px solid rgba(93,242,214,.22);
-  background:linear-gradient(180deg, rgba(93,242,214,.1), rgba(93,242,214,.04));
-}
-.flip{
-  perspective:1200px;
-}
-.flip-inner{
-  position:relative;
-  min-height:250px;
-  transform-style:preserve-3d;
-  transition:transform .8s ease;
-}
-.flip:hover .flip-inner{transform:rotateY(180deg)}
-.flip-side{
-  position:absolute; inset:0; backface-visibility:hidden;
-  border-radius:22px;
-}
-.flip-back{transform:rotateY(180deg)}
 .glow{
   box-shadow:0 0 0 1px rgba(255,255,255,.08), 0 18px 48px rgba(121,167,255,.12);
 }
-.small{font-size:.92rem}
+.small{
+  font-size:.92rem;
+}
+.about-grid{
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  gap:22px;
+  align-items:start;
+}
+.about-box{
+  padding:26px;
+}
+.about-points{
+  display:grid;
+  gap:12px;
+  margin-top:8px;
+}
+.about-point{
+  padding:14px 16px;
+  border-radius:16px;
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.1);
+  color:var(--muted);
+  line-height:1.65;
+}
+.about-point strong{
+  color:#fff;
+}
+.reveal{
+  opacity:0;
+  transform:translateY(16px);
+}
 @media (max-width: 960px){
   .hero-grid{grid-template-columns:1fr}
   .col-4,.col-5,.col-6,.col-7,.col-8{grid-column:span 12}
+  .about-grid{grid-template-columns:1fr}
 }
 @media (max-width: 680px){
-  .nav{align-items:flex-start; flex-direction:column}
+  .nav{
+    align-items:flex-start;
+    flex-direction:column;
+  }
   .nav-links{width:100%}
-  .nav-links a{flex:1 1 calc(50% - 10px); text-align:center}
+  .nav-links a{
+    flex:1 1 calc(50% - 10px);
+    text-align:center;
+  }
   .hero{padding-top:30px}
-  .hero-card,.stats,.card{padding:20px}
-  .cta-row .btn{width:100%; text-align:center}
+  .hero-card,.stats,.card,.about-box{padding:20px}
+  .cta-row .btn{
+    width:100%;
+    text-align:center;
+  }
   .brand{width:100%}
 }
 </style>
-
 </head>
 <body>
+
 <header class="site-header">
   <div class="container nav">
     <a class="brand" href="index.html" aria-label="Open homepage">
@@ -301,19 +379,19 @@ p{color:var(--muted); line-height:1.7; margin:0 0 14px}
 <main>
   <section class="hero">
     <div class="container hero-grid">
-      <article class="panel hero-card">
+      <article class="panel hero-card reveal">
         <span class="eyebrow">Open • Clear • Official</span>
         <h1>Tiger Tap - Jogo Tigrinho</h1>
         <p class="lead">
           Official public page for the application <strong>Tiger Tap - Jogo Tigrinho</strong> and the developer account of
           <strong>Konstanta TOV</strong>. This website is designed to give moderators, users, and partners a transparent
-          overview of the app, support contacts, privacy approach, and future development direction.
+          overview of the app, support contacts, privacy information, and development direction.
         </p>
         <div class="accent-line"></div>
         <p>
           The project is presented openly: what the app is, who develops it, how users can reach support,
-          and how privacy is handled. The goal is to create trust through simple language, visible contact information,
-          and connected pages that are easy to verify on mobile devices.
+          and how privacy-related information is published. The goal is to create trust through simple language,
+          visible contact information, and connected pages that are easy to review on mobile devices.
         </p>
         <div class="cta-row">
           <a class="btn primary" href="privacy-policy.html">Read Privacy Policy</a>
@@ -322,14 +400,14 @@ p{color:var(--muted); line-height:1.7; margin:0 0 14px}
         </div>
       </article>
 
-      <aside class="panel stats">
+      <aside class="panel stats reveal">
         <div class="stat">
-          <strong>1 App</strong>
+          <strong>1 Public App</strong>
           <span>Current public project: Tiger Tap - Jogo Tigrinho</span>
         </div>
         <div class="stat">
-          <strong>0 Data</strong>
-          <span>No personal data collection, storage, or sharing stated in the privacy policy.</span>
+          <strong>Analytics & Attribution</strong>
+          <span>Limited usage data, app activity, and device identifiers may be processed through Firebase Analytics and AppsFlyer.</span>
         </div>
         <div class="stat">
           <strong>Direct Contact</strong>
@@ -341,70 +419,89 @@ p{color:var(--muted); line-height:1.7; margin:0 0 14px}
 
   <section class="section">
     <div class="container grid">
-      <article class="panel card col-7">
+      <article class="panel card col-7 reveal">
         <h2>Developer profile</h2>
         <p>
           <strong>Konstanta TOV</strong> is the developer name shown for this application. This page exists to make the account
           identity more understandable to both users and platform reviewers.
         </p>
-        <div class="list">
-          <li><strong>Developer name:</strong> Konstanta TOV</li>
-          <li><strong>Application name:</strong> Tiger Tap - Jogo Tigrinho</li>
-          <li><strong>Primary account email:</strong> <a href="mailto:sergeypoznyko@gmail.com">sergeypoznyko@gmail.com</a></li>
-          <li><strong>Purpose of this site:</strong> public transparency, support access, and policy visibility.</li>
+
+        <div class="info-list">
+          <div class="info-item"><strong>Developer name:</strong> Konstanta TOV</div>
+          <div class="info-item"><strong>Application name:</strong> Tiger Tap - Jogo Tigrinho</div>
+          <div class="info-item"><strong>Primary account email:</strong> <a href="mailto:sergeypoznyko@gmail.com">sergeypoznyko@gmail.com</a></div>
+          <div class="info-item"><strong>Purpose of this site:</strong> public transparency, support access, and policy visibility.</div>
         </div>
       </article>
 
-      <article class="panel card col-5 glow">
+      <article class="panel card col-5 glow reveal">
         <h2>Transparency focus</h2>
-        <p>These public pages are structured to show a complete and honest picture of the developer account.</p>
+        <p>These public pages are structured to show a complete and honest picture of the developer account and app listing.</p>
         <span class="tag">Official contact</span>
         <span class="tag">Linked pages</span>
         <span class="tag">Mobile friendly</span>
-        <span class="tag">Clear privacy wording</span>
-        <span class="tag">Future roadmap context</span>
+        <span class="tag">Privacy information</span>
+        <span class="tag">Marketing context</span>
       </article>
 
-      <article class="panel card col-4">
+      <article class="panel card col-4 reveal">
         <h3>Privacy</h3>
-        <p>The app does not collect, store, or transfer user data according to the published privacy statement.</p>
+        <p>
+          The app may use Firebase Analytics and AppsFlyer to process limited usage data, app activity,
+          device identifiers, and related technical information.
+        </p>
         <a class="btn" href="privacy-policy.html">Open page</a>
       </article>
 
-      <article class="panel card col-4">
+      <article class="panel card col-4 reveal">
         <h3>Support</h3>
-        <p>Users can contact the developer directly for help, questions, and issue reporting.</p>
+        <p>
+          Users can contact the developer directly for help, questions, and issue reporting through the published support page.
+        </p>
         <a class="btn" href="support.html">Open page</a>
       </article>
 
-      <article class="panel card col-4">
+      <article class="panel card col-4 reveal">
         <h3>Marketing</h3>
-        <p>The public message explains the developer’s current stage, effort, value focus, and future monetization plans.</p>
+        <p>
+          The public message explains the developer’s current stage, value focus, and future development or monetization plans.
+        </p>
         <a class="btn" href="marketing.html">Open page</a>
       </article>
 
-      <article class="panel card col-12 flip">
-        <div class="flip-inner">
-          <div class="flip-side panel card">
+      <article class="panel card col-12 reveal">
+        <div class="about-grid">
+          <div class="about-box">
             <h2>About the application</h2>
             <p>
               <strong>Tiger Tap - Jogo Tigrinho</strong> is presented as a developing product built with care and growing ambition.
               The public-facing materials emphasize clarity, openness, and responsible communication with users.
             </p>
             <p>
-              This homepage acts as a single entry point for all important documents connected to the app listing.
+              This homepage acts as a single entry point for the main public documents connected to the app listing,
+              including privacy information, support access, and general product context.
             </p>
-            <p class="small">Hover or tap mentally through the linked sections to explore the full public profile.</p>
+            <p class="small">
+              The design is intentionally distinctive while remaining readable and easy to review across desktop and mobile devices.
+            </p>
           </div>
-          <div class="flip-side flip-back panel card">
-            <h2>Why this website matters</h2>
-            <p>
-              Reviewers can quickly verify support access, privacy language, and developer identity. Users can understand
-              what the app does not do with their data and how to reach the developer if needed.
-            </p>
-            <p>
-              The design is intentionally distinctive to make the developer profile memorable while staying easy to read.
-            </p>
+
+          <div class="about-box">
+            <h2>Public information summary</h2>
+            <div class="about-points">
+              <div class="about-point">
+                <strong>Data transparency:</strong> the public pages are aligned with the app’s privacy information and do not claim that no analytics tools are used.
+              </div>
+              <div class="about-point">
+                <strong>Third-party services:</strong> Firebase Analytics and AppsFlyer may be used for analytics, attribution, app improvement, and related technical processing.
+              </div>
+              <div class="about-point">
+                <strong>User support:</strong> users can contact the developer by email for questions or assistance.
+              </div>
+              <div class="about-point">
+                <strong>Deletion requests:</strong> these public materials do not promise a user data deletion request mechanism.
+              </div>
+            </div>
           </div>
         </div>
       </article>
@@ -424,33 +521,23 @@ document.addEventListener('DOMContentLoaded', () => {
   const year = document.getElementById('year');
   if (year) year.textContent = new Date().getFullYear();
 
-  document.querySelectorAll('[data-copy]').forEach(btn => {
-    btn.addEventListener('click', async () => {
-      const text = btn.getAttribute('data-copy');
-      try{
-        await navigator.clipboard.writeText(text);
-        const old = btn.textContent;
-        btn.textContent = 'Copied';
-        setTimeout(()=>btn.textContent = old, 1200);
-      }catch(e){
-        alert(text);
-      }
-    });
-  });
-
   const observer = new IntersectionObserver((entries)=>{
     entries.forEach(entry=>{
       if(entry.isIntersecting){
         entry.target.animate([
           {opacity:0, transform:'translateY(16px)'},
           {opacity:1, transform:'translateY(0)'}
-        ], {duration:700, easing:'cubic-bezier(.2,.65,.2,1)', fill:'forwards'});
+        ], {
+          duration:700,
+          easing:'cubic-bezier(.2,.65,.2,1)',
+          fill:'forwards'
+        });
         observer.unobserve(entry.target);
       }
     });
   }, {threshold: .12});
 
-  document.querySelectorAll('.panel, .card, .stat').forEach(el => observer.observe(el));
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 });
 </script>
 
